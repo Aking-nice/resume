@@ -55,6 +55,9 @@
     opacity: 0;
     transition: all 0.6s;
 }
+.hover-bg .hover-text a:hover,.hover-bg .hover-text a:focus{
+    color: rgb(22, 186, 157);
+}
 .hover-bg .hover-text>h4 {
     opacity: 0;
     -webkit-transform: translateY(100%);
@@ -203,15 +206,13 @@ img.bg{
     text-transform:none;
     letter-spacing:normal;
     line-height:26px;
+    font-size:16px;
 }
 a.more{
-    color:orange;
+    font-size:12px;
     text-decoration:none;
     text-transform:uppercase;
-    font-size:10px;
-}
-a.more:hover{
-    color:#fff;
+    color: rgb(22, 186, 157);
 }
 @media (min-width: 768px)
 .container {
