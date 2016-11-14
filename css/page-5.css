@@ -218,3 +218,9 @@ a.more{
 .container {
     width: 720px;
 }
+
+@media only screen and (max-width: 400px) {
+    .fp-slide, .fp-slidesContainer {
+        height: 120%;
+    }
+}
