@@ -1,0 +1,55 @@
+/* loading */
+body{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+.loading{
+	width: 60px;
+	height: 60px;
+	position: relative; /*居中*/
+	top: 50%;
+	margin: -30px auto;
+}
+.loading #rate{
+	font-size: 9px;
+	width: 100%;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	color: #0062e0;
+	position: absolute;
+	top: 100%;
+}
+.double1,.double2{
+	width: 100%;
+	height: 100%;
+	background-color: #0062e0;
+	left: 0;
+	top: 0;
+	position: absolute;
+	border-radius: 50%;
+	-webkit-opacity:.6;
+}
+.double1{
+	-webkit-animation:bounce 2s infinite ease-in-out 0s;
+}
+.double2{
+	-webkit-animation:bounce1 2s infinite ease-in-out 0s;
+}
+@-webkit-keyframes bounce{
+	0%,100%{
+		-webkit-transform:scale(0);
+	}
+	50%{
+		-webkit-transform:scale(1);
+	}
+}
+@-webkit-keyframes bounce1{
+	0%,100%{
+		-webkit-transform:scale(1);
+	}
+	50%{
+		-webkit-transform:scale(0);
+	}
+}

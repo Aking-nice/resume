@@ -1,0 +1,27 @@
+/* 折线图表组件样式 */
+.h5_component_Polyline{ 
+}
+.h5_component_Polyline canvas{
+	position: absolute; 
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.h5_component_Polyline .text{
+	position: absolute; 
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	bottom: -20px;
+	text-align: center;
+	-webkit-transform:scale(.8); /*chrome下文字大小不能小于12px*/
+	-webkit-transition:all 1s 1.5s;
+	-webkit-opacity:0;
+}
+.h5_component_Polyline_load .text{
+	-webkit-opacity:1;
+}
+.h5_component_Polyline_leave .text{
+	-webkit-opacity:0;
+}

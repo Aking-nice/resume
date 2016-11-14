@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>test-H5componentPie.html</title>
+    <!-- 用于开发测试 H5componentBase 对象（基本的图文组件） -->
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5componentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5componentBase.css">
+
+    <!-- 引入饼图资源 -->
+    <script type="text/javascript" src="../js/H5componentPie.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5componentPie.css">
+
+    <!-- 引入饼图资源 -->
+    <script type="text/javascript" src="../js/H5componentRing.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5componentRing.css">
+
+    <body>
+        <div class="iphone">
+            
+        </div>
+        <script type="text/javascript">
+            var cfg = {
+                type: 'ring',
+                width: 400,
+                height: 400,
+                data: [
+                    ['总课程' , .5  ,'#ff7676']
+                ],
+                css:{
+                    top:200,
+                    // opacity:0
+                },
+                // animateIn: { top:200 , opacity:1 },
+                // animateOut: { top:200 , opacity:0 },
+                center:true
+            }
+            var h5 = new H5componentRing( 'ring', cfg );
+
+            $('.iphone').append(h5);
+
+            var leave=true;
+            $('body').click(function () {
+                leave=!leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad');
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+

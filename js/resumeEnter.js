@@ -28,9 +28,6 @@ $(function () {
 
   project_info();
 
-
-
-
   $('#resume').fullpage({
       sectionsColor: ['transparent', 'transparent', '#e4e4e4', 'rgba(255, 255, 255, .0)', 'transparent', 'transparent'],
 
@@ -92,12 +89,9 @@ $(function () {
 
         if(nextIndex==4){
           $('.pure').hide();
-          $('.sky').show();
         }
 
         if(nextIndex==6){
-          $('.sky').hide();
-        }else {
             $('.item-6 .top').animate({'height': '50%'},400);
             $('.item-6 .foot').animate({'height': '50%'},400);
         }
@@ -164,8 +158,13 @@ $(function () {
 
           case 'page6':
             setTimeout(function () {
-              $('.item-6 .top').animate({'height': '30%'},400);
-              $('.item-6 .foot').animate({'height': '30%'},400);
+               if(window.screen.width<400){
+                $('.item-6 .top').animate({'height': '10%'},400);
+                $('.item-6 .foot').animate({'height': '10%'},400);
+              } else {
+                $('.item-6 .top').animate({'height': '30%'},400);
+                $('.item-6 .foot').animate({'height': '30%'},400);
+              }
             },500)
 
             break;

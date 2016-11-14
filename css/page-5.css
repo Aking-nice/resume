@@ -3,16 +3,19 @@
     animation: shake 2s ease ;
 
 }
-
 .fp-controlArrow.fp-next {
     -webkit-animation: shake 2s ease ;
     animation: shake 2s ease ;
     -webkit-animation-delay: .5s;
 }
+@media only screen and (max-width: 400px) {
+    .fp-controlArrow.fp-next {
+        display: none !important;
+    }
+}
 .item-5 .container {
     margin-top:50px;
 }
-
 
 .isotope, .isotope .isotope-item {
     /* change duration value to whatever you like */
@@ -120,6 +123,15 @@ img.bg{
     top:0px;
     margin-top:6px;
     z-index:999999;
+    transform:rotate(-90deg);
+}
+@media only screen and (max-width: 400px) {
+    .rotator ul{
+        -ms-transform:rotate(-90deg);     
+        -moz-transform:rotate(-90deg);    
+        -webkit-transform:rotate(-90deg); 
+        transform:rotate(-90deg); 
+    }
 }
 .rotator ul li{
     display:block;
@@ -128,7 +140,7 @@ img.bg{
     width:260px;
 }
 .rotator ul li a{
-    width:230px;
+    width:108px;
     float:right;
     /*clear:both;*/
     padding-left:10px;
@@ -149,7 +161,7 @@ img.bg{
     -webkit-border-top-left-radius:10px;
     -webkit-border-bottom-left-radius:20px;
     border-top-left-radius:10px;
-    border-bottom-left-radius:20px;
+    border-bottom-left-radius:20px;    
 }
 
 .rotator ul li a:hover{

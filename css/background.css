@@ -1,13 +1,20 @@
 /*********************设置背景************************************/
 .item-1 {
-    background: url("../images/2222.jpg") no-repeat center center;
+    background: url("../images/bg1.jpg") no-repeat center center;
     -webkit-background-size: cover;
     background-size:cover ;
 }
 .item-2 {
-    background: url("../images/d1.jpg") no-repeat center center;
+    background: url("../images/bg2.jpg") no-repeat center center;
     -webkit-background-size: cover;
     background-size:cover;
+}
+@media only screen and (max-width: 400px) {
+    .item-2 {
+        background: url("../images/bg2-1.jpg") no-repeat center center;
+         -webkit-background-size: cover;
+        background-size:cover;
+    }
 }
 .item-5 {
     background: url("../images/d3.jpg") no-repeat center center; 
@@ -15,10 +22,9 @@
     background-size:cover;
 }
 .item-4 {
-    background: url("../images/guns1.jpg") no-repeat center center; 
+    background: url("../images/guns1.png") no-repeat center center; 
     -webkit-background-size: cover;
     background-size:cover;
-    /*background: rgba(255, 255, 255, .1);!important;*/
 }
 .guns {
     opacity: 1;
@@ -38,5 +44,10 @@
     background-size:100%;
     position: fixed;
     display: none;
+}
+@media only screen and (max-width: 400px) {
+    .pure {
+        background: url("../images/pure-small.jpg") no-repeat center 50px;
+    }
 }
 /**********************设置背景End*****************************************/

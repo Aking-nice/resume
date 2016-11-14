@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>test-H5componentRader.html</title>
+    <!-- 用于开发测试 H5componentBase 对象（基本的图文组件） -->
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5componentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5componentBase.css">
+
+    <!-- 引入雷达图资源 -->
+    <script type="text/javascript" src="../js/H5componentRader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5componentRader.css">
+
+    <body>
+        <div class="iphone">
+            
+        </div>
+        <script type="text/javascript">
+            var cfg = {
+                type: 'Rader',
+                width: 400,
+                height: 400,
+                data: [
+                    [ 'PHP'    , .6  ,  'green'  ], 
+                    [ 'CSS'    , .35  ],
+                    [ 'CSS3'   , .6  ],
+                    [ 'HTML5'  , .7   ],
+                    [ 'jQuery' , .5  ]
+                ],
+                css:{
+                    top:300,
+                    opacity:0
+                },
+                animateIn: { top:100 , opacity:1 },
+                animateOut: { top:300 , opacity:0 },
+                center:true
+            }
+            var h5 = new H5componentRader( 'myRader', cfg );
+
+            $('.iphone').append(h5);
+
+            var leave=true;
+            $('body').click(function () {
+                leave=!leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad');
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+

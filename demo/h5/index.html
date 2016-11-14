@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>双十一</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:0;
+        }
+        .h5_page{
+            background-image: url(img/page_bg.jpg);
+        }
+        .h5_page_face{
+            background-image: url(img/face_bg.jpg);
+        }
+        .h5_component_name_slogan{
+            -webkit-animation: rock 2s infinite 2s;
+        }
+        @-webkit-keyframes rock{
+            0%{ transform:rotate(0deg)}
+            5%{ transform:rotate(3deg)}
+            15%{ transform:rotate(-4deg)}
+            10%{ transform:rotate(3deg)}
+            15%{ transform:rotate(-2deg)}
+            25%{ transform:rotate(1deg)}
+            30%{ transform:rotate(-1deg)}
+            70%{ transform:rotate(0deg)}
+        }
+        .h5_component_name_back{
+            top:30px;
+            -webkit-animation: back 2s infinite 2s;
+        }
+        @-webkit-keyframes back{
+            50%{ top:20px;}
+        }
+        .h5_component_name_caption{
+            background-image: url(img/page_caption_bg.png);
+            width:175px;
+            height:160px;
+            line-height: 140px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+    <!-- 载入所有的组件资源 -->
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+
+    <!-- H5对象：进行内容管理 -->
+    <script type="text/javascript" src="js/H5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/H5.css">
+
+    <!-- loading效果 -->
+    <script type="text/javascript" src="js/loading.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+
+
+    <!-- 页面主要逻辑 -->
+    <script type="text/javascript">
+        $(function (){
+            var h5 = new H5();
+
+            h5.whenAddPage = function(){
+                this.addComponent('slide_up',{
+                    bg:'img/footer.png',
+                    css:{
+                        left:0,
+                        bottom:-20,
+                        width:'100%',
+                        height:'20px',
+                        opacity:0,
+                        zIndex:1000
+                    },
+                    animateIn: { bottom:'-1px', opacity:1 },
+                    animateOut: { bottom:'-20px', opacity:0 },   
+                    delay:500
+                })
+            }
+
+            h5 
+            .addpage('face')
+                    .addComponent('slogan',{
+                        center:true,
+                        width:340,
+                        height:120,
+                        bg:'img/face_logo.png',
+                        css:{
+                            top:280,
+                            opacity:0
+                        },
+                        animateIn: { left:'50%' , opacity:1 },
+                        animateOut: { left:'0%' , opacity:0 },   
+                        delay: 500
+                    })
+                    .addComponent('face_img_left',{
+                        width:370,
+                        height:493,
+                        bg:'img/face_img_left.png',
+                        css:{
+                            opacity:0,
+                            left:-50, 
+                            bottom:-50 
+                        },
+                        animateIn:  { opacity:1, left:0   , bottom:0    },
+                        animateOut: { opacity:0, left:-50 , bottom:-50  },
+                        delay: 1000
+                    })
+                    .addComponent('face_img_right',{
+                        width:352,
+                        height:465,
+                        bg:'img/face_img_right.png',
+                        css:{
+                            opacity:0,
+                            right:-50, 
+                            bottom:-50 
+                        },
+                        animateIn:  { opacity:1, right:0   , bottom:73    },
+                        animateOut: { opacity:0, right:-50 , bottom:-50  },
+                        delay: 1000
+                    })
+            .addpage()
+                .addComponent('caption',{
+                    text:'双11狂欢节'
+                })
+                .addComponent('text',{
+                    width:500,
+                    height:30,
+                    center:true,
+                    text:'双十一网购狂欢节',
+                    css:{
+                        opacity:0,
+                        textAlign:'center',
+                        color:'red',
+                        fontSize:'26px'
+                    },
+                    animateIn:  { opacity:1, top:120  },
+                    animateOut: { opacity:0, top:240  }
+                })
+                .addComponent('description',{
+                    width:481,
+                    height:295,
+                    center:true,
+                    bg:'img/description_bg.png',
+                    text:'双十一网购狂欢节源于淘宝商城（天猫）2009年11月11日举办的促销活动，当时参与的商家数量和促销力度均是有限，但营业额远超预想的效果，于是11月11日成为天猫举办大规模促销活动的固定日期。',
+                    css:{
+                        opacity:0,
+                        textAlign:'justify', //文本两端对齐
+                        color:'#fff',
+                        fontSize:'15px',
+                        padding:'15px 10px 10px',
+                        lineHeight:'18px'
+                    },
+                    animateIn:  { opacity:1, top:190  },
+                    animateOut: { opacity:0, top:240  },
+                    delay: 1000
+                })
+                .addComponent('people',{
+                    type: 'base',
+                    bg: 'img/p1_people.png',
+                    width: 549,
+                    height: 427,
+                    css:{
+                        bottom:0,
+                        opacity:0
+                    },
+                    animateIn: { bottom:54 , opacity:1 },
+                    animateOut: { bottom:0 , opacity:0 },
+                    center:true,
+                    delay: 500
+                })
+            .addpage()//polyline
+                .addComponent('caption',{ 
+                    text:'历年销售额占比'
+                })
+                .addComponent('Polyline',{
+                    type: 'Polyline',
+                    width: 600,
+                    height: 383,
+                    data: [
+                        [ '2012', .1  ,'blue'   ], 
+                        [ '2013', .15  ,'blue'],
+                        [ '2014', .35  ,'blue'],
+                        [ '2015', .4  ,'red' ]
+                    ],
+                    css:{
+                        top:100,
+                        opacity:0
+                    },
+                    animateIn: { top:250 , opacity:1 },
+                    animateOut: { top:100 , opacity:0 },
+                    center:true
+                })
+                .addComponent('msg',{
+                    text: '淘宝双十一销售额',
+                    css:{
+                        top:100,
+                        opacity:0,
+                        fontSize:20,
+                        textAlign:'center',
+                        width:'100%',
+                        color:'red'
+                    },
+                    animateIn: { top:200 , opacity:1 },
+                    animateOut: { top:100 , opacity:0 }
+                })
+            .addpage()//pie
+                .addComponent('caption',{ 
+                    text:'销售占比'
+                })
+                .addComponent('pie',{
+                    type:'pie',
+                    data:[
+                        [ '淘宝'    , .4  , '#d60201'], 
+                        [ '天猫'    , .2  , '#31a6a0'], 
+                        [ '京东'    , .1  , '#55705d'], 
+                        [ '唯品会'   , .1  , '#fa7d00'], 
+                        [ '蘑菇街'   , .1  , '#a39eb2'], 
+                        [ '聚美优品' , .1  , '#00113c']     
+                    ],
+                    css:{top:200},
+                    width:300,
+                    height:300,
+                    center:true
+                })
+                .addComponent('msg',{
+                    text: '各大电商销售占比',
+                    css:{
+                        bottom:0,
+                        opacity:0,
+                        textAlign:'center',
+                        width:'100%',
+                        color:'#000'
+                    },
+                    animateIn: { bottom:140 , opacity:1 },
+                    animateOut: { bottom:0 , opacity:0 }
+                })
+            .addpage()//bar
+                .addComponent('caption',{ 
+                    text:'品类关注度Top6'
+                })
+                .addComponent('bar',{
+                    type: 'bar',
+                    width: 530,
+                    height: 600,
+                    data: [
+                        [ '服装配饰'    , .3  , '#d60201'], 
+                        [ '护肤美妆'    , .2  , '#31a6a0'], 
+                        [ '数码产品'   , .15  , '#a39eb2'], 
+                        [ '食品饮料'    , .13  , '#55705d'], 
+                        [ '个人护理'   , .12  , '#fa7d00'], 
+                        [ '生活用品' , .1  , '#00113c'] 
+                    ],
+                    css:{
+                        top:100,
+                        opacity:0
+                    },
+                    animateIn: { top:180 , opacity:1 },
+                    animateOut: { top:100 , opacity:0 },
+                    center:true
+                })
+                .addComponent('msg',{
+                    text: '服装配饰和护肤美妆 占到40%',
+                    css:{
+                        bottom:0,
+                        opacity:0,
+                        textAlign:'center',
+                        width:'100%',
+                        color:'#000'
+                    },
+                    animateIn: { bottom:120 , opacity:1 },
+                    animateOut: { bottom:0 , opacity:0 }
+                })
+            .addpage()//bar_v
+                .addComponent('caption',{ 
+                    text:'商品价格降率'
+                })
+                .addComponent('bar_v',{
+                    type: 'bar_v',
+                    width: 600,
+                    height: 300,
+                    data: [
+                        [ '服装配饰' , .4   , '#d60201'], 
+                        [ '护肤美妆' , .1   , '#31a6a0'], 
+                        [ '数码产品' , .2   , '#a39eb2'], 
+                        [ '个人护理' , .05  , '#fa7d00'], 
+                        [ '生活用品' , .35  ,'#00113c'] 
+                    ],
+                    css:{
+                        top:100,
+                        opacity:0
+                    },
+                    animateIn: { top:200 , opacity:1 },
+                    animateOut: { top:100 , opacity:0 },
+                    center:true
+                })
+                .addComponent('msg',{
+                    text: '服装配饰 占到40%',
+                    css:{
+                        top:0,
+                        opacity:0,
+                        textAlign:'center',
+                        width:'100%',
+                        color:'＃000'
+                    },
+                    animateIn: { top:200 , opacity:1 },
+                    animateOut: { top:0 , opacity:0 }
+                })
+            .addpage()//radar
+                .addComponent('caption',{ 
+                    text:'品类销售比'
+                })
+                .addComponent('rader',{
+                    type: 'Rader',
+                    width: 400,
+                    height: 400,
+                    data: [
+                        [ '服装配饰' , .6   , '#d60201'], 
+                        [ '护肤美妆' , .35  , '#31a6a0'],
+                        [ '数码产品' , .6   , '#a39eb2'],
+                        [ '个人护理' , .7   , '#fa7d00'],
+                        [ '生活用品' , .5   ,'#00113c'] 
+                    ],
+                    css:{
+                        top:100,
+                        opacity:0
+                    },
+                    animateIn: { top:200 , opacity:1 },
+                    animateOut: { top:100 , opacity:0 },
+                    center:true
+                })    
+            .addpage()//ring
+                .addComponent('caption',{ 
+                    text:'流量转换率'
+                })
+                .addComponent('ring-all',{
+                    type: 'ring',
+                    width: 400,
+                    height: 400,
+                    data: [
+                        ['淘宝' , .5  ,'#CF1511']
+                    ],
+                    css:{
+                        top:120,
+                        opacity:0,
+                        fontSize:'30px'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 },
+                    center:true
+                })
+                .addComponent('ring-1',{
+                    type: 'ring',
+                    width: 140,
+                    height: 140,
+                    data: [
+                        ['京东' , .2  ,'darkorange']
+                    ],
+                    css:{
+                        bottom:144,
+                        left:30,
+                        opacity:0,
+                        fontSize:'12px'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 },
+                    center:true
+                })
+                .addComponent('ring-2',{
+                    type: 'ring',
+                    width: 140,
+                    height: 140,
+                    data: [
+                        ['一号店' , .3  ,'darkorange']
+                    ],
+                    css:{
+                        bottom:144,
+                        left:0,
+                        opacity:0,
+                        fontSize:'12px'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 }
+                })
+                .addComponent('ring-3',{
+                    type: 'ring',
+                    width: 140,
+                    height: 140,   
+                    data: [
+                        ['亚马逊' , .4  ,'darkorange']
+                    ],
+                    css:{
+                        bottom:144,
+                        right:0,
+                        opacity:0,
+                        fontSize:'12px'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 }
+                })
+                .addComponent('ring-4',{
+                    type: 'ring',
+                    width: 140,
+                    height: 140,
+                    data: [
+                        ['唯品会' , .3  ,'darkorange']
+                    ],
+                    css:{
+                        bottom:45,
+                        opacity:0,
+                        fontSize:'12px',
+                        marginLeft:'20%'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 }
+                })
+                .addComponent('ring-5',{
+                    type: 'ring',
+                    width: 140,
+                    height: 140,   
+                    data: [
+                        ['苏宁易购' , .4  ,'darkorange']
+                    ],
+                    css:{
+                        bottom:45,
+                        marginLeft:'60%',
+                        opacity:0,
+                        fontSize:'12px'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 }
+                })
+                .addComponent('msg',{
+                    text: '淘宝日均转化率遥遥领先 达50％',
+                    css:{
+                        opacity:0,
+                        textAlign:'center',
+                        top:360,
+                        width:'100%',
+                        color:'#CF1511'
+                    },
+                    animateIn: { opacity:1 },
+                    animateOut: { opacity:0 }
+                })   
+            .addpage()//point
+                .addComponent('caption',{ 
+                    text:'电商热门度'
+                })
+                .addComponent('point-all',{
+                    type: 'point',
+                    width: 300,
+                    height: 300,
+                    data: [
+                        ['淘宝' , .4  ,'#d70103'],
+                        ['一号店' , .2  ,'#54695a', '50%' ,'-150%'],
+                        ['京东' , .3  ,'#492d78', 0 ,'-90%'],
+                    ],
+                    css:{
+                        bottom:'20%'
+                    },
+                    animateIn: { bottom:'20%' , opacity:1 },
+                    animateOut: { bottom:0 , opacity:0 },
+                    center:true
+                })
+            .addpage('tail')
+                .addComponent('logo',{
+                    width:359,
+                    height:129,
+                    center:true,
+                    bg: 'img/tail_logo.png',
+                    top:'280',
+                    css:{
+                        opacity:0,
+                        top:240
+                    },
+                    animateIn:  { opacity:1, top:210  },
+                    animateOut: { opacity:0, top:240  }
+                })
+                .addComponent('slogan',{
+                    center:true,
+                    width:314,
+                    height:46,
+                    bg:'img/tail_slogan.png',
+                    css:{
+                        top:280,
+                        opacity:0
+                    },
+                    animateIn: { left:'50%' , opacity:1 },
+                    animateOut: { left:'0%' , opacity:0 },   
+                    delay: 500
+                })
+                .addComponent('share',{
+                    width:128,
+                    height:120,
+                    bg:'img/tail_share.png',
+                    css:{
+                        top:110,
+                        right:110,
+                        opacity:0
+                    },
+                    animateIn: { right:'10' , opacity:1 ,top:10 },
+                    animateOut: { right:'110' , opacity:0 ,top:110 },   
+                    delay: 1000
+                })
+                .addComponent('back',{
+                    width:80,
+                    height:196,
+                    bg:'img/tail_back.gif',
+                    center:true,
+                    click:'function',
+                    onclick:function(){
+                         $.fn.fullpage.moveTo( 1 );
+                    }
+                })
+            .loader( [ 'img/tail_back.gif','img/tail_share.png','img/tail_slogan.png' ] );
+        }) 
+
+
+    </script>
+    <body>
+
+        <div class="loading">
+            <div class="double1"></div>
+            <div class="double2"></div>
+            <div id="rate">0%</div>
+        </div>
+
+        <!-- 加载 H5组件 相关资源 -->
+        <script>
+            var res = [
+                'Base','Bar','Bar_v','Point','Polyline',
+                'Rader','Pie','Ring'
+                ];
+            var html = [];
+            for (s in res) {
+                html.push( '<script type="text/javascript" src="js/H5component'+res[s]+'.js"><\/script>');
+                html.push( '<link rel="stylesheet" type="text/css" href="css/H5component'+res[s]+'.css">');
+            }
+            document.write(html.join('')); 
+
+        </script>
+    </body>
+
+</html>
+
+
+

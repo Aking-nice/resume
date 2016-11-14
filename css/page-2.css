@@ -52,10 +52,6 @@
     animation: bounceInUp 2s ease forwards;
     -webkit-animation-delay:2s;
 }
-/*.item-2 .page2-title.rotateOutUpLeft {*/
-    /*-webkit-animation: rotateOutUpLeft .5s ease ;*/
-    /*animation: rotateOutUpLeft .5s ease ;*/
-/*}*/
 .item-2  .page2-title {
     display: inline-block;
     -webkit-animation: zoomInDown 2s ease forwards;
