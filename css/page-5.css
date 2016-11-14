@@ -107,10 +107,9 @@
 @media(max-width:768px){
     .rotator{
         width: 100%;
-        margin-top: 30px;
-        height:100%;
+        margin-top: 139px;
         left: -50%;
-        margin-left:100px;
+        margin-left:180px;
         transform: rotate(90deg);
         -webkit-transform: rotate(90deg);
     }
@@ -135,6 +134,9 @@ img.bg{
         -moz-transform:rotate(-90deg);    
         -webkit-transform:rotate(-90deg); 
         transform:rotate(-90deg); 
+    }
+    .item-5 .fp-tableCell{
+        vertical-align: baseline;
     }
 }
 .rotator ul li{
