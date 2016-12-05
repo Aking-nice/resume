@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0
+}body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+input, button {
+    margin: 0;
+    font-size: 12px;
+    vertical-align: middle;
+}
+body {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    color: #898989;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+b, em, i {
+    font-style: normal;
+    font-weight: normal;
+}
+h1, h2, h3 {
+    font-size: 14px;
+}
+h4 {
+    font-weight: normal;
+    font-size: 14px;
+}
+h5 {
+    font-size: 12px;
+}
+h6 {
+    font-size: 12px;
+    font-weight: normal;
+}
+img {
+    display: block;
+}
+a {
+    color: #6e6e76;
+    text-decoration: none;
+}
+a:hover {
+    color: #1bbc6b;
+}
+.l {
+    width: 100%;
+    float: left;
+}
+.fl {
+    display: inline;
+    float: left;
+}
+.fr {
+    display: inline;
+    float: right;
+}
+.clearfix {
+    *zoom: 1
+}
+.clearfix:before,.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+.clearfix:after {
+    clear: both
+}
+
+/****************************页头*/
+/*轮播图*/
+.carousel {
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    height: 139px;
+    overflow: hidden;
+}  
+.swiper-container img {
+    width: 100%
+}
+.swiper-container .swiper-slide {
+    float: left;
+}
+.points {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.swiper-active-switch {
+    background: #9bcc0e;
+}
+/*轮播消息*/
+.scorllNews {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.scorllNews .news{
+    width: 100%;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+.scorllNews .attention{
+    width: 94%;
+    height: 40px;
+    margin: 0 auto;
+}
+.attention-pic {
+    width: 15px;
+    border: 1px rgba(0, 0, 255, 0) solid;
+    float: left;
+    margin-left: 2%;
+    margin-top: 16px;
+}
+.attention-pic img{
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+.attention-text {
+    width: 78%;
+    height: 35px;
+    line-height: 35px;
+    border: 1px rgba(0, 0, 255, 0) solid;
+    margin-left: 26px;
+    margin-top: -3px;
+    text-align: left;
+    overflow: hidden;
+}
+.attention-text p{
+    font-size: 13px;
+    color: #797979;
+    margin-top: 6px;
+}
+
+/*主体内容*/
+.content {
+    float: left;
+    width: 100%;
+    min-height: 350px;
+    margin-top: -30px;
+}
+.scorllModule {
+    width: 100%;
+    height: 100px;
+}
+#slides {
+    width: 100%;
+    height: 98px;
+    position: relative;
+    margin: 32px auto 0 auto;
+    overflow: hidden;
+    background: #efefef;
+}
+.slides_container li {
+    width: 100%;
+    float: left;
+}
+.slides_container .module_pic {
+    text-align: center;
+}
+.slides_container li a {
+    display: inline-block;
+    width: 22%;
+    border: 1px solid #efefef;
+    float: left;
+    margin-left: 2%;
+    padding: 10px 0;
+}
+.slides_container li a h2 {
+    width: 100%;
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 22px;
+    color: #808080;
+    margin-top: 8px;
+}
+.slides_container li a img.module_icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    display: inline-block;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    -webkit-transition-property: -webkit-transform, left, top;
+    -webkit-transition-duration: 0s;
+    -webkit-transform: translate3d(0px, 0, 0);
+    -webkit-transition-timing-function: ease;
+    -moz-transition-property: -moz-transform, left, top;
+    -moz-transition-duration: 0s;
+    -moz-transform: translate3d(0px, 0, 0);
+    -moz-transition-timing-function: ease;
+    -o-transition-property: -o-transform, left, top;
+    -o-transition-duration: 0s;
+    -o-transform: translate3d(0px, 0, 0);
+    -o-transition-timing-function: ease;
+    -o-transform: translate(0px, 0px);
+    -ms-transition-property: -ms-transform, left, top;
+    -ms-transition-duration: 0s;
+    -ms-transform: translate3d(0px, 0, 0);
+    -ms-transition-timing-function: ease;
+    transition-property: transform, left, top;
+    transition-duration: 0s;
+    transform: translate3d(0px, 0, 0);
+    transition-timing-function: ease;
+}
+.prev,.next{
+    position: absolute;
+    top: 35px;
+    z-index: 99;
+    outline: none;
+    text-indent: -999px;
+    width: 20px;
+    height: 30px;
+    display: block;
+}
+.prev {
+    left: 1px;
+    background: url(../images/template_3.png) no-repeat;
+    background-size: 34px 52px;
+}
+.next{
+    right: 1px;
+    background: url(../images/template_3.png) no-repeat -16px 0;
+    background-size: 34px 52px;
+}
+
+/****************************main*/
+.main {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 240px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+.newTitle {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.newTitle h3{
+    text-align: left;
+}
+.newTitle .moreLink>a {
+    font-size: 14px;
+    color: #898989;
+}
+.newTitle .moreLink>a i{
+    position: relative;
+    top: -3px;
+    width: 8px;
+    height: 5px;
+    margin-left: 2px;
+    display: inline-block;
+    background: url("../images/titarrowdown.png") no-repeat top center;
+    background-size: 8px 5px;
+}
+.newTitle .moreLink>a.on i{
+    height: 5px;
+    margin-left: 2px;
+    display: inline-block;
+    background: url("../images/titarrow.png") no-repeat top center;
+    background-size: 8px 5px;
+}
+.moreLink {
+    float: right;
+    width: 80px;
+    text-align: center;
+    position: relative;
+}
+.fixedBar {
+    position: fixed;
+    width: 80px;
+    right: 0;
+    bottom: 45px;
+    z-index: 100;
+}
+.fixedBar .subLinks {
+    width: 100%;
+    position: relative;
+    margin-bottom: 4px;
+}
+.fixedBar .subLinks ul {
+    background: #333;
+}
+.subLinks ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+}
+.subLinks ul li a {
+    color: #fff;
+}
+.newTitle .moreLink ul {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    background: #f2f2f2;
+    width: 78px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    display: none;
+    z-index: 1;
+}
+.newTitle .moreLink ul li {
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+.fixedBar .triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: middle;
+    border-top: 7px solid #333;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+.fixedBar .aClick {
+    display: block;
+    width: 33px;
+    height: 33px;
+    margin: 0 auto;
+    background: url("../images/aclickIcon.png") no-repeat;
+    background-size: 33px 33px;
+}
+/*全部功能 icon部分*/
+.item_one {
+    width: 22%;
+    height: 78px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 3%;
+    overflow: hidden;
+}
+.item_one h2{
+    margin-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.more_module_icon {
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*产品体系*/
+.product, {
+    width: 99%;
+}
+.pro_list {
+    width: 94%;
+    height: 70px;
+    border: 1px rgba(0, 0, 255, 0) solid;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px #adadad solid;
+    box-shadow: 1px -3px 8px rgb(233,233,233);
+    margin-top: 4px;
+}
+.pro_list_pic {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0,0,255,0);
+    float: left;
+    margin-top: 7px;
+    margin-left: 3%;
+}
+.pro_list_pic_icon {
+    width: 100%;
+    height: 100%;
+}
+.pro_list_text {
+    width: 75%;
+    height: 50px;
+    border: 1px solid rgba(0,0,255,0);
+    margin-left: 70px;
+    margin-top: 7px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/****************************页脚*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background: #383838;
+}
+.footer a{
+    width: 50%;
+    float: left;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #fff;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+.footer a:first-child{
+    border-right: 1px solid #737373;
+}
+
+
+
+
+
+
+
+
+
